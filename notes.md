@@ -31,8 +31,18 @@ Layers of the OSI Model:
 ![Layer 2](note-media/layer2.png)
 ![Layer 3](note-media/layer3.png)
 ![Layer 4](note-media/layer4.png)
+![Layer 5](note-media/layer5.png)
+![Layer 6](note-media/layer6.png)
+![Layer 7](note-media/layer7.png)
+
 
 **Some Port Stuff**
 Port 22: Logical port for SSH
 Port 80: Logical port for HTTP
 Port 443: Logical port for HTTPS
+
+**TCP Handshake**
+![TCP Handshake](note-media/tcphandshake.png)
+Step 1: SYN (synchronize) - Client sends a SYN packet to the server to initiate a connection.
+Step 2: SYN-ACK (synchronize-acknowledge) - Server responds with a SYN-ACK packet to acknowledge the request.
+Step 3: ACK (acknowledge) - Client sends an ACK packet to acknowledge the server's response.
