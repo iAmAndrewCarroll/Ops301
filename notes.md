@@ -12,15 +12,25 @@ Layers of the OSI Model:
 | # | Layer | Address Type | Data Type | Devices/Protocols | Mnemonic |
 | - | ----- | ------------ | --------- | -------- | -------- |
 | 7 | Application | | | HTTP, FTP, DNS, DHCP, Computer | Away |
-| 6 | Presentation | | | | ASCII, JPEG/GIF/PNG, Computer (Format) | Pizza |
+| 6 | Presentation | | | ASCII, JPEG/GIF/PNG, Computer (Format) | Pizza |
 | 5 | Session | | | SMB, SIP, Computer | Sausage |
 | 4 | Transport | Logical Port Number | Segments | TCP, UDP, Gateway, Load Balancer | Throw |
 | 3 | Network | IP Address (197.168.1.1) | Packets | Router, L3 Switch (VLAN) | Not |
 | 2 | Data Link | MAC Address (00:0a:95:9d:68:16) | Frame (group of bits) | L2 Switch, Bridge | Do |
 | 1 | Pysical | Physical Port ID (P1, P7, etc) | Bits (0s and 1s) | Cables, Hubs, Repeaters, NICs, etc | Please |
+
 **Full Mnemonic: Please Do Not Throw Sausage Pizza Away**
+<br>
 **Layer 1-3 are hardware/physical layers**
+<br>
 **Layer 4-7 are software/protocol layers**
+<br>
+**Layer 5-7 do not have specific Address or Data Types associated with them**
+<br>
+![Layer 1](note-media/layer1.png)
+![Layer 2](note-media/layer2.png)
+![Layer 3](note-media/layer3.png)
+![Layer 4](note-media/layer4.png)
 
 **Some Port Stuff**
 Port 22: Logical port for SSH
