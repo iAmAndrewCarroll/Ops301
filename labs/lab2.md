@@ -102,3 +102,6 @@ Displays the kernel routing table.
 `netstat -n -t` 
 Displays all TCP connections and their respective IP addresses and port numbers.
 ![netstat](media/lab2-12.png)
+
+**Resources**
+I assisted other student in 301 cohorts with their labs and shared my github repo with them for reference.  I needed help from TAs in a couple instances and I also used Google and ChatGPT to complete the lab.
