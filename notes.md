@@ -45,16 +45,24 @@ Port 443: Logical port for HTTPS
 
 **1. List and describe the ports used for the following:**
 
-| Service   | Description                                                    | Protocol | Port    | Additional Info                                    |
-|-----------|----------------------------------------------------------------|----------|---------|----------------------------------------------------|
-| Telnet    | Telecommunication Network Protocol, allows remote access      | TCP      | 23      | Has security issues                               |
-| SSH       | Secure Shell, secure remote access                             | TCP      | 22      | All traffic is encrypted, more secure than Telnet |
-| DNS       | Domain Name System, translates domain names to IP addresses  | UDP      | 53      |                                                    |
-| SMTP      | Simple Mail Transfer Protocol, sends email messages           | TCP      | 25      | Typically plaintext; SMTPS uses TLS on 587/465   |
-| HTTP      | HyperText Transfer Protocol, sends/receives web pages         | TCP      | 80      | Unencrypted                                        |
-| HTTPS     | HyperText Transfer Protocol Secure, sends/receives web pages  | TCP      | 443     | Encrypted                                          |
-| RDP       | Remote Desktop Protocol, view/control remote computer        | TCP      | 3389    | Encrypted                                          |
-| Ping      | ICMP, test connectivity to remote computer                   | ICMP     | Type 8  | Typically on port 0; blocked by firewalls          |
+**1. List and describe the ports used for the following:**
+
+| Service                   | Description                                                    | Protocol | Port(s) | Additional Info                                    |
+|---------------------------|----------------------------------------------------------------|----------|---------|----------------------------------------------------|
+| DHCP                      | Dynamic Host Configuration Protocol, assigns IP addresses     | UDP      | 67, 68  |                                                    |
+| DNS                       | Domain Name System, translates domain names to IP addresses   | UDP      | 53      |                                                    |
+| FTP                       | File Transfer Protocol, used for file transfers               | TCP      | 20, 21  | Data and control channels                         |
+| HTTPS                     | HyperText Transfer Protocol Secure, sends/receives web pages  | TCP      | 443     | Encrypted                                          |
+| HTTP                      | HyperText Transfer Protocol, sends/receives web pages         | TCP      | 80      | Unencrypted                                        |
+| ICMP (Ping)               | ICMP, test connectivity to remote computer                   | ICMP     | Type 8  | Typically on port 0; blocked by firewalls          |
+| NTP                       | Network Time Protocol, synchronizes system clocks            | UDP      | 123     |                                                    |
+| RDP                       | Remote Desktop Protocol, view/control remote computer        | TCP      | 3389    | Encrypted                                          |
+| SMB                       | Server Message Block, file and printer sharing                | TCP      | 445     | Commonly used in Windows file sharing              |
+| SMTP                      | Simple Mail Transfer Protocol, sends email messages           | TCP      | 25      | Typically plaintext; SMTPS uses TLS on 587/465   |
+| SFTP                      | SSH File Transfer Protocol, secure file transfers             | TCP      | 22      | Encrypted                                          |
+| SSH                       | Secure Shell, secure remote access                             | TCP      | 22      | All traffic is encrypted, more secure than Telnet |
+| Telnet                    | Telecommunication Network Protocol, allows remote access      | TCP      | 23      | Has security issues                               |
+
 
 
 **TCP Handshake**
@@ -82,3 +90,14 @@ echo "Current Date: $(date +%m/%d/%Y)" - prints the date in the format of MM/DD/
 `echo "Today is $month/$day/$year" >> test-date.txt` - appends the date to the test-date.txt file
 `mv test-date.txt test-date-$(date +%m-%d-%Y).txt` - renames the file to include the date
 
+**Types of Protocols and Ports I need to know to pass CompTia Network+**
+
+**2. List of Protocols with Descriptions and Port Information:**
+
+| Protocol               | Description                                     | Connection Type    | Associated Ports (if any)                   |
+|------------------------|-------------------------------------------------|--------------------|--------------------------------------------|
+| ICMP (Internet Control Message Protocol) | Used for network diagnostics and error reporting. | Connectionless    | N/A                                        |
+| UDP (User Datagram Protocol)            | Provides a connectionless and lightweight communication mechanism. | Connectionless    | Various, e.g., DNS (53), NTP (123)         |
+| TCP (Transmission Control Protocol)    | Provides reliable, connection-oriented communication. | Connection-oriented | Various, e.g., SSH (22), HTTP (80)        |
+| IP (Internet Protocol)                 | A fundamental protocol for routing packets across networks. | N/A                | N/A                                        |
+| Connection-oriented vs Connectionless   | Indicates whether a protocol establishes a connection before data transfer (connection-oriented) or sends data without establishing a connection (connectionless). | N/A | N/A                                      |
