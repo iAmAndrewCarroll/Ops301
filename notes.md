@@ -45,8 +45,6 @@ Port 443: Logical port for HTTPS
 
 **1. List and describe the ports used for the following:**
 
-**1. List and describe the ports used for the following:**
-
 | Service                   | Description                                                    | Protocol | Port(s) | Additional Info                                    |
 |---------------------------|----------------------------------------------------------------|----------|---------|----------------------------------------------------|
 | DHCP                      | Dynamic Host Configuration Protocol, assigns IP addresses     | UDP      | 67, 68  |                                                    |
@@ -78,13 +76,30 @@ Step 3: ACK (acknowledge) - Client sends an ACK packet to acknowledge the server
 **Don't forget your shebang!**
 `#!/bin/bash`
 
-`echo $date` - prints the date
-`year=$(date +%Y)` - assigns the year to a variable
-`month=$(date +%m)` - assigns the month to a variable
-`day=$(date +%d)` - assigns the day to a variable
+**Date and Time Format Codes:**
 
-echo "Today is $month/$day/$year" - prints the date in the format of MM/DD/YYYY
-echo "Current Date: $(date +%m/%d/%Y)" - prints the date in the format of MM/DD/YYYY
+| Format | Description                                       | Example     |
+|--------|---------------------------------------------------|-------------|
+| %Y     | Year (4-digit)                                    | 2023        |
+| %m     | Month (01-12)                                     | 03          |
+| %d     | Day of the month (01-31)                          | 15          |
+| %H     | Hour (00-23)                                      | 14          |
+| %M     | Minute (00-59)                                    | 45          |
+| %S     | Second (00-59)                                    | 22          |
+| %A     | Full weekday name (e.g., Sunday)                   | Monday      |
+| %B     | Full month name (e.g., January)                   | September   |
+
+**Shell Commands and Variables:**
+
+| Command/Variable                     | Description                                     | Example                      |
+|--------------------------------------|-------------------------------------------------|------------------------------|
+| `echo $date`                          | Prints the date                                 | (Output varies)              |
+| `year=$(date +%Y)`                    | Assigns the year to a variable                 | `$year` contains the year    |
+| `month=$(date +%m)`                   | Assigns the month to a variable                | `$month` contains the month  |
+| `day=$(date +%d)`                     | Assigns the day to a variable                  | `$day` contains the day      |
+| `echo "Today is $month/$day/$year"`    | Prints the date in the format of MM/DD/YYYY    | Today is 03/15/2023          |
+| `echo "Current Date: $(date +%m/%d/%Y)"` | Prints the date in the format of MM/DD/YYYY  | Current Date: 03/15/2023     |
+
 
 **Append to a file**
 `echo "Today is $month/$day/$year" >> test-date.txt` - appends the date to the test-date.txt file
@@ -101,3 +116,23 @@ echo "Current Date: $(date +%m/%d/%Y)" - prints the date in the format of MM/DD/
 | TCP (Transmission Control Protocol)    | Provides reliable, connection-oriented communication. | Connection-oriented | Various, e.g., SSH (22), HTTP (80)        |
 | IP (Internet Protocol)                 | A fundamental protocol for routing packets across networks. | N/A                | N/A                                        |
 | Connection-oriented vs Connectionless   | Indicates whether a protocol establishes a connection before data transfer (connection-oriented) or sends data without establishing a connection (connectionless). | N/A | N/A                                      |
+
+**Network Enumeration**
+Port Scanning: The process of sending packets to specific ports on a host and analyzing the responses to learn more about the host and its services.  Can tell us what ports are open, what services are running, and what operating system is running, and IP addresses of other hosts on the network.
+
+Network Enumeration uses further techniques to gather information about a network, such as:
+- DNS zone transfers: A DNS zone transfer is the process of copying DNS data from a master DNS server to a slave DNS server.  This allows the slave server to have an exact copy of the DNS records from the master server.  This is useful for load balancing and redundancy.
+- SNMP queries: Simple Network Management Protocol (SNMP) is a protocol for monitoring and managing network devices.  SNMP queries can be used to gather information about network devices, such as routers, switches, and printers.
+- NetBIOS queries: NetBIOS is a protocol that allows applications on different computers to communicate within a local area network (LAN).  NetBIOS queries can be used to gather information about Windows computers on a network.
+- LDAP queries: Lightweight Directory Access Protocol (LDAP) is a protocol for accessing and maintaining directory services over an IP network.  LDAP queries can be used to gather information about users, groups, and computers on a network.
+- NTP queries: Network Time Protocol (NTP) is a protocol for synchronizing the clocks of computers over a network.  NTP queries can be used to gather information about the time and date of computers on a network.
+- SMTP queries: Simple Mail Transfer Protocol (SMTP) is a protocol for sending email messages.  SMTP queries can be used to gather information about email servers on a network.
+
+**Nmap Security Scanner:** A free and open-source network scanner used to discover hosts and services on a computer network by sending packets and analyzing the responses.  It can be used for network inventory, managing service upgrade schedules, and monitoring host or service uptime.
+- Enumerate hosts on a network
+- Enumerate ports open on a host
+- Operate more discreetly or aggressively
+- Perform service fingerprinting to determine waht software (OS or apps) might be running on the target host
+
+**Nmap Syntax**
+`nmap [options] {target specification}`
