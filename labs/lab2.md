@@ -19,7 +19,7 @@
 - Why?  I only told it to scan pfsense and not the IP Address Range.
 - Why would I perform this particular scan? To see all hosts that are up and running.
 
-`nmap -sn 192.168.2.1 > /home/kali/lab2/scan2.txt`
+`nmap -sn 192.168.2.1/24 > /home/kali/lab2/scan2.txt`
 ![fast scan](media/lab2-2.png)
 
 - This scan found all hosts on the network
