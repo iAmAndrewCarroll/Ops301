@@ -118,9 +118,11 @@ Step 3: ACK (acknowledge) - Client sends an ACK packet to acknowledge the server
 | Connection-oriented vs Connectionless   | Indicates whether a protocol establishes a connection before data transfer (connection-oriented) or sends data without establishing a connection (connectionless). | N/A | N/A                                      |
 
 **Network Enumeration**
+
 Port Scanning: The process of sending packets to specific ports on a host and analyzing the responses to learn more about the host and its services.  Can tell us what ports are open, what services are running, and what operating system is running, and IP addresses of other hosts on the network.
 
 Network Enumeration uses further techniques to gather information about a network, such as:
+
 - DNS zone transfers: A DNS zone transfer is the process of copying DNS data from a master DNS server to a slave DNS server.  This allows the slave server to have an exact copy of the DNS records from the master server.  This is useful for load balancing and redundancy.
 - SNMP queries: Simple Network Management Protocol (SNMP) is a protocol for monitoring and managing network devices.  SNMP queries can be used to gather information about network devices, such as routers, switches, and printers.
 - NetBIOS queries: NetBIOS is a protocol that allows applications on different computers to communicate within a local area network (LAN).  NetBIOS queries can be used to gather information about Windows computers on a network.
@@ -135,4 +137,79 @@ Network Enumeration uses further techniques to gather information about a networ
 - Perform service fingerprinting to determine waht software (OS or apps) might be running on the target host
 
 **Nmap Syntax**
+
 `nmap [options] {target specification}`
+![Nmap Syntax](note-media/Nmap-Cheat-Sheet.png)
+
+### Day 3
+
+**chmod options (permissions)**
+
+| Command           | Value | Numeric Value | Effect                 |
+|-------------------|-------|---------------|------------------------|
+| `chmod +r file`   | r     | 4             | Add read permission    |
+| `chmod +w file`   | w     | 2             | Add write permission   |
+| `chmod +x file`   | x     | 1             | Add execute permission |
+| `chmod -r file`   | r     | 4             | Remove read permission |
+| `chmod -w file`   | w     | 2             | Remove write permission|
+| `chmod -x file`   | x     | 1             | Remove execute permission|
+| `chmod 755 file`  | rwx   | 7             | Owner: rwx, Group: r-x, Others: r-x |
+| `chmod 644 file`  | rw-   | 6             | Owner: rw-, Group: r--, Others: r-- |
+| `chmod 600 file`  | rw-   | 6             | Owner: rw-, Group: ---, Others: --- |
+
+permissions: rwxrwxrwx (owner, group, others)
+
+you can set folder/dir level permissions and then also set permissions for specific files within the folder/dir.  A folder might have full rwx permissions but a sensitive file may only have rw permissions or even no permissions for the group or others.
+
+**Subnetting**
+
+Network: is a logical collection of contiguous IP addresses that share the same network ID.  A network is also known as a subnet.
+
+Subnet: is literally a "sub-network", a netwrok inside a larger network
+
+IP Address: includeds two parts
+- Network ID: identifies the network. The network ID is the same for all hosts within the network.
+- Host ID: identifies the host. The host ID is unique within the network.
+
+Subnetting involves "borrowing" bits from the Host ID and adding them to the Network ID.
+
+Subnetting: logically breakin an addressable block of IP addresses into mulitple, smaller addressable blocks
+
+![subnetting](note-media/subnet.jpeg)
+
+Subnet Mask: is a 32-bit number that identifies the network ID and host ID of an IP address.  It is used to determine whether a host is on the local network or a remote network.
+- Also known as a netmask, indicates which bits are "masked" to find the Host ID.
+- Example: 255.255.255.0 in Decimal or 11111111.11111111.11111111.00000000 in Binary
+
+CIDR Notation: is a shorthand notation for representing a subnet mask.  It is used to indicate the number of bits in the subnet mask.
+- represents the number of binary bits (counted from left to right) which belong to the Network ID
+
+Example:
+- IP Address: 185.210.25.69/24
+- Subnet Mask: 255.255.255/0
+- Network ID: 185.210.25
+- Host ID: 69
+- Network (Subnet ID): 185.210.25.0
+- First Host IP Address: 185.210.25.1
+- Last Host IP Address:: 185.210.25.254
+- Broadcast Address: 185.210.25.255
+- Next Network (Subnet ID): 185.210.26.0
+- Valid Host IP Addresses: 254
+
+Example Subnet Mask Math:
+![subnet mask math](note-media/subnetmath.jpeg)
+
+Another Example of Subnet Mask Math:
+IP: 20.196.214.18/22
+Subnet Mask: 255.255.252.0
+11111111.11111111.11111100.00000000
+    8        16     22        
+Size of Subnet: 256 - 252 = 4
+Subnet: 20.196.212.0
+First Host: 20.196.212.1
+Last Host: 20.196.215.254
+Broadcast: 20.196.215.255
+Next Subnet: 20.196.216.0
+Number of Subnets: 64
+Hosts per Subnet: 1022 
+![subnet mask math](note-media/subnetmath2.jpeg)
