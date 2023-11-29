@@ -201,17 +201,16 @@ Example Subnet Mask Math:
 ![subnet mask math](note-media/subnetmath.jpeg)
 
 Another Example of Subnet Mask Math:
-
-IP: 20.196.214.18/22
-Subnet Mask: 255.255.252.0
-11111111.11111111.11111100.00000000
-    8        16     22        
-Size of Subnet: 256 - 252 = 4
-Subnet: 20.196.212.0
-First Host: 20.196.212.1
-Last Host: 20.196.215.254
-Broadcast: 20.196.215.255
-Next Subnet: 20.196.216.0
-Number of Subnets: 64
-Hosts per Subnet: 1022 
+- IP: 20.196.214.18/22
+- Subnet Mask: 255.255.252.0
+- 11111111.11111111.11111100.00000000
+- ......8..........16.......22        
+- Size of Subnet: 256 - 252 = 4
+- Subnet: 20.196.212.0
+- First Host: 20.196.212.1
+- Last Host: 20.196.215.254
+- Broadcast: 20.196.215.255
+- Next Subnet: 20.196.216.0
+- Number of Subnets: 64
+- Hosts per Subnet: 1022 
 ![subnet mask math](note-media/subnetmath2.jpeg)
