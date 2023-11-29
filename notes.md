@@ -175,6 +175,7 @@ Subnetting involves "borrowing" bits from the Host ID and adding them to the Net
 
 Subnetting: logically breakin an addressable block of IP addresses into mulitple, smaller addressable blocks
 
+![subnetting](note-media/subnetting.jpeg)
 ![subnetting](note-media/subnet.jpeg)
 
 Subnet Mask: is a 32-bit number that identifies the network ID and host ID of an IP address.  It is used to determine whether a host is on the local network or a remote network.
