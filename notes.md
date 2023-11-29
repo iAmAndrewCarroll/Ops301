@@ -201,6 +201,7 @@ Example Subnet Mask Math:
 ![subnet mask math](note-media/subnetmath.jpeg)
 
 Another Example of Subnet Mask Math:
+
 IP: 20.196.214.18/22
 Subnet Mask: 255.255.252.0
 11111111.11111111.11111100.00000000
