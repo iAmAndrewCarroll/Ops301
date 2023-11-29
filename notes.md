@@ -214,3 +214,34 @@ Another Example of Subnet Mask Math:
 - Number of Subnets: 64
 - Hosts per Subnet: 1022 
 ![subnet mask math](note-media/subnetmath2.jpeg)
+
+**Network Segmentation**
+
+Reasons to implement network segmentation:
+- Performance
+- Security
+- Regulatory Compliance
+  - NIST SP 800-53
+  - NIST SP 800-171
+  - and more...
+
+Network Segmentation: the process of dividing a network into smaller networks, called subnets.  Each subnet is a separate network segment.
+
+Interfaces can be the physical ethernet ports on a router, but can also be represented virtually.
+- commonly the lowest number is WAN, the rest tend to be LAN. Configurable.
+- x0 is WAN, x1 is LAN, x2 is LAN, etc.
+- ens0, ens1, ens2, etc.
+- We can use these interfaces to divide the netwrok using different subnets and DHCP scopes.
+
+![segmentation](note-media/segment.jpeg)
+
+Microsegmentation: the process of dividing a network into even smaller networks, called microsegments.  Each microsegment is a separate network segment.
+- microsegmentation uses much more information in segmentation policies like application-layer information. It enables policies that are more granular and flexible to meet the highly-specific needs of an organization or business application. ~Cisco
+
+![microsegmentation](note-media/switch.jpeg)
+
+Segmentation Methods:
+- Logical Semgentation relies on sofware or packet header info to separate netwrok traffic.
+- examples: VLANs, VPNs, and tunnels
+- VLAN: a virtual LAN that logically separates a physical LAN into multiple virtual LANs.  VLANs are commonly used to separate traffic from different departments or different security zones.
+
