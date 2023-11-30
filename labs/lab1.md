@@ -2,6 +2,7 @@
 
 ### Part 1 - Deploy Kali Linux VM
 
+Verify Internet Access
 ![Verify Internet Access](media/lab1-1.png)
 
 ### Part 2 - Traffic Capture
@@ -9,7 +10,8 @@
 What is the difference between the various colors of packets that you see?
 - The colors indicate the type of traffic. For example, green indicates TCP traffic, blue indicates UDP traffic, and black indicates other types of traffic.
 
-![Traffic Capture](media/lab1-2.png)
+
+![Traffic Capture](media/lab1-5.png)
 
 ### Part 3 - TCP Analysis
 

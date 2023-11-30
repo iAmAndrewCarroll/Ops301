@@ -9,6 +9,7 @@
 | win10     | - Internal Network, intent           |                                       | General Windows VM  |
 
 **Part 2: Port Scanning with nmap**
+
 **Scan for all hosts**
 
 `nmap -sn pfsense > /home/kali/lab2/scan1.txt`
@@ -19,6 +20,7 @@
 - Why?  I only told it to scan pfsense and not the IP Address Range.
 - Why would I perform this particular scan? To see all hosts that are up and running.
 
+**Correctly scan for all hosts**
 `nmap -sn 192.168.2.1/24 > /home/kali/lab2/scan2.txt`
 ![fast scan](media/lab2-2.png)
 
@@ -37,7 +39,7 @@
 
 **Scan the 1000 most common ports on each host**
 
-`nmap -p- --top-ports 1000 192.168.2.1/24 > /home/kali/lab2/1000ports.txt`
+`nmap --top-ports 1000 192.168.2.1/24 > /home/kali/lab2/1000ports.txt`
 ![1000 scan](media/lab2-4.png)
 
 - In technical terms this scan is performed on the top 1000 ports on each host in the specified network.
@@ -57,7 +59,7 @@
 
 **Slow, Comprehensive Scan**
 
-`nmap -p- -T4 -A 192.168.2.1/24 > /home/kali/lab2/slow.txt`
+`nmap -T2 -A 192.168.2.1/24 > /home/kali/lab2/slow.txt`
 ![slow scan](media/lab2-6.png)
 
 - In technical terms this performs a slow, comprehensive scan on all hosts, including version detection, OS detection, and script scanning with slower timing and more detailed output than the 1000 port or fast scan.
