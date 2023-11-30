@@ -68,3 +68,4 @@ Router Setup - (We need to setup the switch to router connection as a trunk)
 
 **Important:**  I forgot to setup the ports for the computers and the router on the switches.  I went back in and corrected the access ports so they were on the proper VLANs.  Now I can ping each computer even on different VLANs.
 ![router](media/lab3-10-router.png)
+

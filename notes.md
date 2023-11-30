@@ -286,4 +286,59 @@ Router Setup - (We need to setup the switch to router connection as a trunk)
 
 **Important:**  I forgot to setup the ports for the computers and the router on the switches.  I went back in and corrected the access ports so they were on the proper VLANs.  Now I can ping each computer even on different VLANs.
 
+**Subnetting**
+
+Given the ip address 37.104.171.223/13, find the network id/subnet, first IP, last IP, broadcast IP, next subnet, number of subnets, and number of hosts per subnet.
+
+- Network ID/Subnet: 255.255.248.0.0
+  - think of the 13 as 13 1s. Each 255 is 8 1s.  So it would be like 11111111.11111000.00000000.00000000.  
+  - The 1s are valued as 128 64 32 16 8 4 2 1.  Here we have 5 1s in the second set.  128 + 64 + 32 + 16 + 8 = 248.  So the subnet mask is 255.248.0.0
+  - You can also decide to subtract the smaller number from 255.  In this case the 0s are valued at 4 2 and 1.  4 + 2 + 1 = 7.  255 - 7 = 248.  So the subnet mask is 255.248.0.0
+- How to find the subnet that fits the IP address 37.104.171.223/13
+  - count subnets by 8s. .0 .8 .16 ... .96 .104 .112 ... .224 .232 .240 .248
+  - Our IP fits in the .104-.112 subnet subset
+  - This helps us find our first IP 37.104.0.1
+  - Our next subnet is 37.112.0.0
+- First IP: 37.104.0.1
+- Last IP: 37.112.255.254 (subtract 1 from the Broadcast IP)
+- Broadcast IP: 37.111.255.255 (will be the very last IP address in the "neighborhood")
+- Next Subnet: 37.112.0.0
+- Number of Subnets Fit: 32
+  - 11111111.11111000.00000000.00000000
+  - we only look at the octet where the change happens.  
+  - we will use 2^5 power because there are 5 1s in the octet where the change happens
+  - 2^5 = 32
+- Number of Hosts per Subnet: 524,286
+  - 2^19 = 524,288
+    - 19 is the number of 0s in the last octet
+    - 2^19 - 2 = 524,286
+      - 2 is subtracted because the first and last IP addresses are reserved for the network and broadcast addresses
+    - 524,286 is the number of hosts per subnet
+
+IP Address: 219.41.245.178/28
+Subnet Mask: 255.255.255.240
+- the /28 tells us there are 28 1s in the subnet mask and 4 0s
+  - the 0s are worth 8 4 2 1 = 15
+  - 255 - 15 = 240
+  - Subnet is 255.255.255.240
+Subnet ID: 219.41.245.176
+- 256 - 240 = 16
+- IP address is 219.41.245.178
+  - 178 / 16 = 11.125
+  - round down to 11; 11 * 16 = 176
+  - 176 is the subnet ID
+  - 176 to 192 is the range of the subnet
+First IP: 219.41.245.177
+Last IP: 219.41.245.190
+Broadcast IP: 219.41.245.191
+Next Subnet: 219.41.245.192
+- last subnet in the range found in the subnet ID range 
+- here the subnet range was 176 to 192
+Number of Subnets: 16
+- 2^4 = 16
+Hosts per Subnet: 14
+- number of subnets minus 2
+  - 16 - 2 = 14
+
+![subnetting](note-media/subnet-math.jpeg)
 
