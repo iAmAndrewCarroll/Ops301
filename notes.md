@@ -346,7 +346,9 @@ Hosts per Subnet: 14
 - Logical Topology: how devices appear connected to the user
   - Broadcast
   - Point to point
-  
+
+- Physical Topology: how devices are physically connected
+
 | Physical Topology | Description | Pros | Cons | Common Usage |
 |-------------------|-------------|------|------|--------------|
 | Bus               | All devices are connected to a single cable. | - Affordable. <br> - Simple to set up. | - Single point of failure (if the cable fails, the entire network goes down). <br> - Only half-duplex communication (one-way traffic at a time). | Extremely rare in modern networks. |
