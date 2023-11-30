@@ -356,3 +356,44 @@ Hosts per Subnet: 14
 | Ring              | Devices are connected in a circular fashion. | - Equal access to the network for all devices. <br> - No collisions in data transmission. | - Hard to scale. <br> - Single ring is half-duplex <br> - Single point of failure (if one device or cable fails, it can disrupt the entire ring). | Less common in modern networks due to its susceptibility to disruption. |
 | Mesh              | Each device is connected to every other device. | - High redundancy (multiple paths for data to travel). <br> - Fault tolerance (if one link fails, data can still find an alternate route). | - High cabling and configuration complexity. <br> - Costly to implement in large networks. | Common in critical infrastructure networks (e.g., data centers, telecommunications). |
 | Hybrid            | Combines two or more different physical topologies. | - Combines the strengths of multiple topologies. <br> - Provides flexibility. | - Increased complexity in design and management. | Common in larger enterprise networks that require different topologies for different segments. |
+
+Wireless Topologies:
+- Mesh
+  - All devices are connected to every other device.
+- Ad Hoc
+  - Direct wireless connection between two devices.  Many printers can do this.
+- Infrastructure
+  - Devices are connected to a central access point (AP).  This is the most common wireless topology.  Access points broadcasts an SSID and you connect to it.
+
+**Routing Protocols**
+
+Static Routing: having predefined single path to the destination saved to your router that takes precedence over dynamic routs
+
+Default Routing: Usually used in small networks, defauls is a manually defined path to take when not specific route can be determined
+
+Dynamic Routing: Most common method of routing that calculates what route to take
+- Convergence
+- Accuracy
+
+Routing Mechanism
+- Autonomous System (AS)
+  - private AS used for internal networks
+  - public AS used for external networks like internet backbone
+- Interior Gateway Protocol (IGP)
+  - These protocols are what allow routers to communicate with each other within an AS
+  - RIPv1, RIPv2 (Routing Information Protocol)
+  -IGRP (Interior Gateway Routing Protocol)
+  - OSPF (Open Shortest Path First)
+- Exterior Gateway Protocols
+  - BGP (Border Gateway Protocol)
+
+Protocol Types
+- Distance vector: uses distance as a metric value
+  - RIP
+    - Uses number of hops to make a decision (number of routers it has to go through to get to the server)
+  - IGRP
+- Link state: uses bandwidth as a metric value.  Works in a linked format and uses a complex metric table
+  - OSPF (Open Shortest Path First) where shortest means fastest/shortest amount of time
+  - IS-IS
+- Hybrid: uses both distance and bandwidth as metric values
+  - EIGRP (Enhanced Interior Gateway Routing Protocol)
