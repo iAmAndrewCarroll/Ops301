@@ -1,3 +1,5 @@
+### Day 1
+
 ### Layers of the OSI Model:
 
 1. **Physical Layer (Layer 1)**: Responsible for physical connections, synchronization of bits, transmission rate, physical topologies, and transmission modes.
@@ -244,4 +246,44 @@ Segmentation Methods:
 - Logical Semgentation relies on sofware or packet header info to separate netwrok traffic.
 - examples: VLANs, VPNs, and tunnels
 - VLAN: a virtual LAN that logically separates a physical LAN into multiple virtual LANs.  VLANs are commonly used to separate traffic from different departments or different security zones.
+
+### Day 4
+
+**Cisco Packet Tracer**
+
+Switch CLI Commands to enable trunk
+- `enable`
+- `configure terminal`
+- `interface gigabitethernet 0/1` or `interface FastEthernet 0/1`
+  - 0/1 is the port number
+- `switchport mode trunk`
+- `end`
+- `write memory`
+
+Router Setup - (We need to setup the switch to router connection as a trunk)
+- `enable`
+- `configure terminal`
+- `interface fastethernet 0/0`
+- `no shutdown`
+- `exit` 
+  - moves up one level out of the interface and back to router config
+- `interface fastethernet 0/0.10`
+  - 0/0.10 is the subinterface
+  - you will see fastethernet 0/0.10 state changed to up
+- `encapsulation dot1q 10`
+  - 10 is the VLAN ID
+  - encapsulation dot1q makes sure that other networks don't receive the traffic specific for VLAN 10
+- `ip address 192.168.10.1 255.255.255.0`
+  - this is the IP address and subnet mask for the VLAN 10 interface
+- `interface fa0/0.20`
+  - 0/0.20 is the subinterface
+  - you will see fastethernet 0/0.20 state changed to up
+- `encapsulation dot1q 20`
+  - 20 is the VLAN ID
+- `ip address 192.168.20.1 255.255.255.0`
+  - this is the IP address and subnet mask for the VLAN 20 interface
+- `exit`
+
+**Important:**  I forgot to setup the ports for the computers and the router on the switches.  I went back in and corrected the access ports so they were on the proper VLANs.  Now I can ping each computer even on different VLANs.
+
 
