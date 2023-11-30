@@ -10,29 +10,32 @@ Verify Internet Access
 What is the difference between the various colors of packets that you see?
 - The colors indicate the type of traffic. For example, green indicates TCP traffic, blue indicates UDP traffic, and black indicates other types of traffic.
 
-
+The below image shows the packets captured when I visited [The CERN Website](http://info.cern.ch/) in order to run the HTTP Get process in Wireshark.
 ![Traffic Capture](media/lab1-5.png)
 
 ### Part 3 - TCP Analysis
 
 How many segments are used here?
-- 422
+- TCP Segment Len: 422
 ![TCP Analysis](media/lab1-4.png)
-<br>
+
 What is the length in bytes of each segment?
-- See above screenshot.
-<br>
+- There are 422 bytes per segment.
+
 Can You identify all three packets involved in the TCP three-way handshake? Include a screenshot of them.
+- Lines 3, 4, and 5 are the three packets involved in the TCP three-way handshake as noted by the SYN, SYN/ACK, and ACK flags.
 ![TCP Handshake](media/lab1-5.png)
-<br>
+
 How much data is typically acknowledged per ACK?
 - 54 or 60 bytes
 
 ### Part 4 - HTTP Analysis
+
+HTTP Get method on the scan from [CERN](http://info.cern.ch/)
 ![HTTP Analysis](media/lab1-6.png)
-<br>
-Common HTTP headers:
-![HTTP Headers](media/lab1-7.png)
+
+Common HTTP headers: Host, User-Agent, Accept, Accept-Encoding, Accept-Language,
+![Common HTTP Headers](media/lab1-7.png)
 
 ### Part 5 - Wrapup
 Search [Indeed](https://www.indeed.com/) for Wireshark
