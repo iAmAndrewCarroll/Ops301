@@ -58,7 +58,6 @@ Screenshot of the overall network topology created for this lab
   - CLOUD(config-if)#`exit`
   - CLOUD(config)#`router bgp 10000`
     - 10000 is the AS number
-  - CLOUD(config)#: router bgp 10000
   - CLOUD(config-router)#`bgp log-neighbor-changes`
   - CLOUD(config-router)#`neighbor 156.12.1.6 remote-as 65000`
     - 65000 is the AS number of the other router
