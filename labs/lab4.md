@@ -49,10 +49,10 @@ Screenshot of the overall network topology created for this lab
   - Router>`enable`
   - Router#`configure terminal`
   - Router(config)#`hostname CLOUD`
-  - CLOUD(config)#`interface f0/1`
+  - CLOUD(config)#`interface fa0/1`
   - CLOUD(config-if)#`no shutdown`
   - CLOUD(config-if)#`ip address 192.168.200.1 255.255.255.0`
-  - CLOUD(config-if)#`interface f0/0`
+  - CLOUD(config-if)#`interface fa0/0`
   - CLOUD(config-if)#`no shutdown`
   - CLOUD(config-if)#`ip address 156.12.1.5 255.255.255.252`
   - CLOUD(config-if)#`exit`
