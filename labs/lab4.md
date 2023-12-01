@@ -6,6 +6,10 @@ Wiring
 - Marco used a crossover connection between routers
  - 0/1 to 0/1 on the routers
 - Marco used a straight through connection between the router and the switch and the switch and the client and the other switch and the "google" server
+
+Screenshot of the overall network topology created for this lab
+![Network Topology](media/lab4-2.png)
+
 - PC-A
   - IP Address: 192.168.100.10
   - Subnet: 255.255.255.0
@@ -28,6 +32,7 @@ Wiring
   - Router(config-if)#`exit`
   - Router(config)#`router bgp 65000`
     - 65000 is the AS number
+  - Router(config)#: router bgp 65000  
   - Router(config-router)#`bgp log-neighbor-changes`
   - Router(config-router)#`neighbor 156.12.1.5 remote-as 10000`
     - 10000 is the AS number of the other router
@@ -53,6 +58,7 @@ Wiring
   - CLOUD(config-if)#`exit`
   - CLOUD(config)#`router bgp 10000`
     - 10000 is the AS number
+  - CLOUD(config)#: router bgp 10000
   - CLOUD(config-router)#`bgp log-neighbor-changes`
   - CLOUD(config-router)#`neighbor 156.12.1.6 remote-as 65000`
     - 65000 is the AS number of the other router
@@ -64,3 +70,8 @@ Wiring
         - this will show the routes that are being advertised
     - **router bgp 10000** will take you back into the proper config after exiting for the `show ip bgp` command
 
+Screenshots of the `show ip bgp`, `show ip bgp summary`, and `show ip bgp neighbors` command on both routers showing the configured routes
+![show ip bgp](media/lab4-1.png)
+
+Screenshot of the ping from PC-A to the Cloud Server
+![ping](media/lab4-3.png)
