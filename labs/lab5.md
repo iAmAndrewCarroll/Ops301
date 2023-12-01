@@ -137,7 +137,7 @@ For each device on the network, include:
 - Host Operating Systems
 
 Include a screenshot of your topology here, and save your topology for use in the future. You will need it for the next lab.
-![Network Diagram](media/lab5-16.png)
+![Network Diagram](media/lab5-17.png)
 
 **Leave your VirtualBox network as-is! You’ll need it for the next class, so don’t delete anything (especially that VPN tunnel)!**
 
