@@ -16,17 +16,33 @@ In this lab, you will create VLANs on both switches in the topology, assign VLAN
 ![network topology](media/lab3-2-topology.png)
 
 **Task 2: Configure VLANS and assign switch ports**
+
+Switch 0
 ![vlan 10](media/lab3-3-vlan.png)
+
+Switch 1
 ![vlan 20](media/lab3-6-vlan.png)
 
 **Task 3: Configure Trunking**
+
+Switch 0
 ![trunkS0](media/lab3-4-trunk.png)
+
+Switch 1
 ![trunkS1](media/lab3-7-trunk.png)
 
 **Other Visuals**
+
+PC-A Pings
 ![pings](media/lab3-1-pings.png)
+
+Switch 0 Access
 ![access 0](media/lab3-5-access.png)
+
+Switch 1 Access VLAN 10
 ![access 1](media/lab3-8-access1.png)
+
+Switch 1 Access VLAN 20
 ![access 2](media/lab3-9-access2.png)
 
 **Added Router With Screenshot of VLAN to VLAN Ping**
