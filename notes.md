@@ -397,3 +397,7 @@ Protocol Types
   - IS-IS
 - Hybrid: uses both distance and bandwidth as metric values
   - EIGRP (Enhanced Interior Gateway Routing Protocol)
+
+**Day 6**
+
+![Network Address Translation](note-media/nat.png)
