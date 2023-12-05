@@ -1,3 +1,9 @@
+Marco Lecture Time Stamps:  1:08:15 & 1:33:46
+- 1:33:46; Go to Firewall > Virtual IPs
+  - Create IP Alias > 10.0.2.16 (example)
+
+
+
 Submitting in order to get a chance to redo.
 
 
