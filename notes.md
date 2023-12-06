@@ -401,3 +401,8 @@ Protocol Types
 **Day 6**
 
 ![Network Address Translation](note-media/nat.png)
+
+pfSense VM
+- Operating System: FreeBSD (64-bit)
+- Base Mem: 1024
+- 8 GB RAM

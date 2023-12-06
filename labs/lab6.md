@@ -2,7 +2,30 @@ Marco Lecture Time Stamps:  1:08:15 & 1:33:46
 - 1:33:46; Go to Firewall > Virtual IPs
   - Create IP Alias > 10.0.2.16 (example)
 
+**I have worked with almost every TA and Marco on trying to get this lab to work.  It will not function**
 
+Include a screenshot of your topology here, and save your topology for use in the future. You will need it for the next lab.
+![Network Diagram](media/lab5-17.png)
+
+Ping from Kali to Ubuntu
+![Kali to Ubuntu](media/lab6-1.png)
+
+pfSense running and rebooting
+![pfSense running and rebooting](media/lab6-2.png)
+
+Kali won't ping the virtual IP via the NAT 1:1
+![Kali won't ping the virtual IP via the NAT 1:1](media/lab6-3.png)
+
+Showing the NAT Network Details in VirtualBox
+![Showing the NAT Network Details in VirtualBox](media/lab6-4.png)
+
+Ping from Kali (192.168.3.100) to pfSense WAN (192.168.3.1)
+![kali to pfsense WAN](media/lab6-5.png)
+
+Ping from Kali (192.168.3.100) to virtual IP (10.0.2.21)
+![kali to virtual IP](media/lab6-6.png)
+
+### Everything below this line is from Lab 5.  
 
 Submitting in order to get a chance to redo.
 

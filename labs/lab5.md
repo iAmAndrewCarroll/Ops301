@@ -170,20 +170,20 @@ pfSense A
 - Same steps as pfSense B but use 192.168.100.2 and 192.168.100.100
 
 pfSense B
-- WAN: 10.0.2.8/24
+- WAN: 10.0.2.15/24
 - LAN: 192.168.3.1/24
-- Option 2: Set Interface IP ADdresses
+- Option 2: Set Interface IP Addresses
   - 2 for LAN
-    - Confi IPv4 address LAN DHCP? No
+    - Config IPv4 address LAN DHCP? No
     - Enter IP address
     - Bit count > 24
     - For LAN press enter
     - Config IPv6 > No
     - Press enter
     - Enable DHCP server on LAN? y
-      - enter start address: 192.168.200.2
-      - enter end address: 192.168.200.100
-    - Revert to HTTP as webConfigurator protocol? y
+      - enter start address: 192.168.3.100
+      - enter end address: 192.168.3.200
+    - Revert to HTTP as webConfigurator protocol? n
     - Press enter
 
 Host Win10: 192.168.2.103
