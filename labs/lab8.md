@@ -46,6 +46,20 @@ Submit detailed documentation regarding all of the configurations in this sectio
 
 1. First you will need a fresh pfSense VM, free from configuration settings from previous labs. You can reset an existing instance to factory settings (Diagnostics / Factory Defaults), revert to a baseline snapshot, import a fresh instance from a baseline OVA backup, or install pfSense on a new VM. However you achieve this, it is important to start from a clean baseline to avoid complications.
 
+**Setting Up a New pfSense**
+- Option 2 sets up the LAN/WAN interface
+- 2 for LAN
+  - Config IPv4 address LAN interface via DHCP? N
+  - Enter the new LAN IPv4 address (this is a gateway address): 192.168.1.1
+  - Enter the new LAN IPv4 subnet bit count (1 to 30): 24
+  - For a LAN, press <ENTER> for none: <ENTER>
+- Config IPv6 address for LAN interface via DHCP6? N
+  - <ENTER> for none
+- Do you want to enable the DHCP server on LAN? (y/n) `this sets the ip address range for the LAN`: Y
+  - Enter the start address of the IPv4 client address range: 192.168.1.100
+  - Enter the end address of the IPv4 client address range: 192.168.1.200
+- Option 7 to ping google to verify internet connection: 8.8.8.8
+
     On the pfSense VM, configure the WAN network adapter to NAT Network and the LAN adapter to Internal Network.
 
 2. Second you will need a user endpoint VM with a GUI (Windows 10 or Kali) for configuring pfSense and testing the Captive Portal.
