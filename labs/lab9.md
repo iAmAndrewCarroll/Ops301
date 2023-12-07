@@ -42,11 +42,20 @@ Submit detailed documentation regarding all of the configurations in this sectio
 
       - Set Promiscuous Mode to Allow All on this Span adapter.
 
+pfSense VM Setup
+![pfSense VM Setup](media/lab9-1.png)
+
 2. On your Kali VM, configure the network adapter to Internal Network and connect it to the same Span network as the new adapter on pfSense.
 
     - Set Promiscuous Mode to Allow All on this adapter.
 
+Kali VM Setup
+![Kali VM Setup](media/lab9-2.png)
+
 3. On the user endpoint VM, configure the network adapter to match the LAN adapter of pfSense (should be set to the same Internal Network). We will need this machine to generate traffic for us to capture.
+
+Ubuntu VM Setup
+![Ubuntu VM Setup](media/lab9-3.png)
 
 ### Part 3: Prepare a Span Port on pfSense
 
