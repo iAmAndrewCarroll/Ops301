@@ -30,6 +30,9 @@ After the network intrusion incident, the GlobeX MSP, Secutronix, performed and 
 
 Read through the entire lab and use Draw.io to create an appropriate topology of the network you expect to construct. Include as many details as you can such as computer names, OS types, IP addresses, etc. Include a screenshot of this initial topology.
 
+Topology
+![Topology](media/lab9-13.png)
+
 ### Part 2: Staging
 
 Submit detailed documentation regarding all of the configurations in this section.
