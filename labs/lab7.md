@@ -34,6 +34,9 @@ GlobeX HR division wants to launch a new employee information website. This webs
    - Include as many details as you can such as computer names, OS types, IP addresses, etc.
    - Include a screenshot of this initial topology.
 
+**Screenshot of Topology**
+![Screenshot of Topology](media/lab7-14.png)
+
 **Part 2: Staging**
 
 **Configuration Steps**
