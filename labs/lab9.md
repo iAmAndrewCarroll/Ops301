@@ -87,6 +87,9 @@ Now we will use Wireshark on Kali to sniff for network traffic on the `span` con
 - On Kali, set Wireshark to capture traffic on the interface associated with the `span` connection we set up earlier
 - Include a screenshot of pings out to `scanme.nmap.org` captured in Wireshark
 
+Wireshark Ping Capture
+![Wireshark Ping Capture](media/lab9-7.png)
+
 ### Part 5: Questions
 
 - On pfSense, navigate to the Dashboard, and locate the list of active interfaces
