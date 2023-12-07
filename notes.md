@@ -406,3 +406,18 @@ pfSense VM
 - Operating System: FreeBSD (64-bit)
 - Base Mem: 1024
 - 8 GB RAM
+
+**Setting Up a New pfSense**
+- Option 2 sets up the LAN/WAN interface
+- 2 for LAN
+  - Config IPv4 address LAN interface via DHCP? N
+  - Enter the new LAN IPv4 address (this is a gateway address): 192.168.1.1
+  - Enter the new LAN IPv4 subnet bit count (1 to 30): 24
+  - For a LAN, press <ENTER> for none: <ENTER>
+- Config IPv6 address for LAN interface via DHCP6? N
+  - <ENTER> for none
+- Do you want to enable the DHCP server on LAN? (y/n) `this sets the ip address range for the LAN`: Y
+  - Enter the start address of the IPv4 client address range: 192.168.1.100
+  - Enter the end address of the IPv4 client address range: 192.168.1.200
+- Option 7 to ping google to verify internet connection: 8.8.8.8
+**never be afraid to use option 4 to reset to factory defaults**

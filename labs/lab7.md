@@ -44,6 +44,9 @@ GlobeX HR division wants to launch a new employee information website. This webs
    - Regardless of the method used, start from a clean baseline to avoid complications.
    - Configure the WAN network adapter to NAT Network and the LAN adapter to Internal Network.
 
+**pfSense VM Successful**
+![pfSense VM Successful](media/lab7-1.png)
+
 **2. Create Ubuntu Server VM**
    - Download the Ubuntu Server ISO.
    - Create a new VM in VirtualBox.
@@ -52,13 +55,22 @@ GlobeX HR division wants to launch a new employee information website. This webs
    - Reboot when installation is complete.
    - On the Ubuntu Server VM, configure the network adapter to match the LAN adapter of pfSense (should be set to the same Internal Network).
 
+**Ubuntu Server VM Successful**
+![Ubuntu Server VM Successful](media/lab7-2.png)
+
 **3. User Endpoint VM Setup**
    - Set up a user endpoint VM with a GUI (Windows 10 or Kali) for configuring pfSense and testing the webserver.
    - Configure the network adapter to match the LAN adapter of pfSense and the Ubuntu Server (should be set to the same Internal Network).
 
+**User Endpoint VM (Kali) Successful**
+![User Endpoint VM (Kali) Successful](media/lab7-2.png)
+
 **Part 3: NGINX Web Server Setup**
 
 **In this step, you’ll deploy an NGINX web server on Linux Server behind pfSense.**
+
+**SSH from Kali to Ubuntu Server**
+![SSH from Kali to Ubuntu Server](media/lab7-3.png)
 
 **Configuration Steps**
 
@@ -88,6 +100,9 @@ GlobeX HR division wants to launch a new employee information website. This webs
      </body>
      </html>
 
+**Screenshot of index.html**
+![Screenshot of index.html](media/lab7-4.png)
+
 4. Set up virtual host
    - `cd /etc/nginx/sites-enabled`
    - `sudo touch globex`
@@ -108,22 +123,50 @@ GlobeX HR division wants to launch a new employee information website. This webs
          }
       }
 
+**Screenshot of globex**
+![Screenshot of globex](media/lab7-5.png)
+
 5. Activate virtual host and test results:
    - check to see that nginx is running `sudo systemctl status nginx`
+
+**Screenshot of nginx status**
+![Screenshot of nginx status](media/lab7-6.png)
+
    - if it is not running, start it with `sudo systemctl start nginx`
    - if it is running, you may need to restart with `sudo systemctl restart nginx`
-   - open ports 22, 8000 on UFW
+
+   - open ports 22, 8000 on UFW 
+     - `sudo ufw status` > Status: inactive 
      - activate the Ubuntu Server's UFS
+     - > `sudo ufw enable` > `sudo ufw status` > Status: active
      - Include a screenshot of UFW settings while you're shelled into Ubuntu Server
+
+**Screenshot of UFW settings**
+![Screenshot of UFW settings](media/lab7-7.png)
+
+**Screenshot of Open Ports**
+![Screenshot of Open Ports](media/lab7-8.png)
+
    - Test that your webpage is available by navigating to http://<ip of NGINXserver>:8000 on a VM on the same subnet as the webserver
+     - http://192.168.1.100:8000
+       - Did not immediately connect to the server
+       - Shutdown the Kali and Ubunu Server VMs
+       - Restarted the Kali and Ubuntu Server VMs
      - It should show "Hello via Nginx!"
-     **Screenshot**
+
+**Screenshot of Hello via Nginx**
+![Screenshot of Hello via Nginx](media/lab7-9.png)
+
 
 6. Load the Globex website files:
    - Clone the class repo to the home directory of your Ubuntu Server
    - Recursively copy the assets from class-07/lab/starter-code folder to `/var/www/globex`
      - This will overwrite the `index.html` file you created earlier
-   - Access the web page using a browser (remember we used port 8000) and include a **screenshot**
+   - Access the web page using a browser (remember we used port 8000) and include a 
+   
+**Screenshot of GlobeX**
+![Screenshot of GlobeX](media/lab7-10.png)
+
 
 **Part 4: Configuring pfSense**
 
@@ -132,8 +175,17 @@ Now that the web server is deployed, you’ll need to configure the pfSense peri
 - Set your pfSense’s WAN interface to NAT Network on VirtualBox.
 - Login to pfSense web UI and navigate to Interfaces > WAN. Scroll to the bottom and set *Block private networks and loopback addresses* and *Block bogon networks* to disabled. These default firewall rules clash with our VirtualBox NAT Network configuration.
 - Determine the web server’s MAC address and add a static DHCP mapping to pfSense for the NGINX web server.
+  - `Services > DHCP Server > LAN > DHCP Static Mapping`
+  - MAC Address: `08:00:27:6d:2c:2c`
+  - Client ID: `Ubuntu Server` 
+  - IP Address: `192.168.1.100`
+    - NOTE:  You have to change the IP Address pool range because the DHCP server cannot be within the range
+      - Services > DHCP Server > LAN > Primary Address Pool: Address Pool Range
 - In Firewall > NAT, configure pfSense to route incoming HTTP requests on WAN port 80 to the NGINX web server port 8000.
 - Now that the web server has been deployed, we can access the web server from outside the network on a device that’s also set to NAT Network.
+
+**Screenshot of pfSense Firewall/NAT/Port Forward**
+![Screenshot of pfSense Firewall/NAT/Port Forward](media/lab7-11.png)
 
 **Part 5: Testing**
 
@@ -142,3 +194,7 @@ Now that the web server is deployed, you’ll need to configure the pfSense peri
 - Test and validate that your web page is accessible from outside the LAN by querying pfSense’s WAN interface using a browser.
 - You can explicitly specify the port using `http://<WAN ip of pfSense>:80` or, because http traffic uses port 80 by default, you can use `http://<WAN ip of pfSense>` and your browser should automatically connect to port 80.
 - Include a **screenshot** of the successful browser test.
+
+**Screensho of GlobeX from WAN on Kali and Ubuntu**
+![Screenshot of GlobeX from WAN on Kali and Ubuntu](media/lab7-12.png)
+![Screenshot of GlobeX from WAN on Kali and Ubuntu](media/lab7-13.png)
