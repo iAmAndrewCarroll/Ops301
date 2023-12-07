@@ -93,10 +93,18 @@ Wireshark Ping Capture
 ### Part 5: Questions
 
 - On pfSense, navigate to the Dashboard, and locate the list of active interfaces
-  - Does the interface you created have an IP address?
+  - Go to *Status > DHCP Leases*
+    - Does the interface you created have an IP address?
+      - *Yes, the interface I created has an IP address. 192.168.2.1*
 - Disable all network devices on Kali *except* the `span` port connection
-  - Does the traffic capture still work?
+  - Does the traffic capture still work? 
+    - *Yes, the traffic capture still works. This is the way my system was setup in the first place.*
   - Why might you want to disconnect a sniffing machine in this way?
+    - *You might want to disconnect a sniffing machine in this way to prevent it from being detected by the network.*
+
+Kali VM before below commands
+![Kali VM after above commands](media/lab9-8.png)
+
 - On Kali, run
   ```
   sudo dhclient -r
@@ -104,13 +112,31 @@ Wireshark Ping Capture
   ip a
   ```
   - Does Kali have any IP addresses?
+    - *No, Kali does not have any IP addresses.  I also went back into the pfSense Option 2 menu and removed the DHCP for IPv4 and IPv6.*
+
+Kali after above commands showing ping and wireshark traffic
+![Kali after above commands showing ping and wireshark traffic](media/lab9-9.png)
+
+Showing DHCP Leasing on Webconfiguator
+![Showing DHCP Leasing on Webconfiguator](media/lab9-10.png)
+
+Kali, Ubuntu, and pfSense showing ping, wireshark, and no IP for Kali
+![Kali, Ubuntu, and pfSense showing ping, wireshark, and no IP for Kali](media/lab9-11.png)
+
 - If niether Kali nor pfSense have an IP address on the `span` port connecting them, how is traffic being sent from pfSense and reaching Kali?
+  - *Traffic is being sent from pfSense and reaching Kali because the traffic is being mirrored from the LAN port to the SPAN port.  The SPAN port is not a part of the network, but it is mirroring the traffic from the LAN port.*
+
 
 ### Part 6: Topology 2/2
 
 When the other tasks are complete, review the topology and update, revise, extend, or add details as necessary.
 
 Was your initial topology accurate to the finished product? Why or why not?
+- No.  I had ip addresses for the SPAN port and Kali.  
+
+Topology
+![Topology](media/lab9-12.png)
+
 
 ## Submission Instructions
 
