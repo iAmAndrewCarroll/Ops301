@@ -69,8 +69,16 @@ We want pfSense to mirror all LAN traffic to this connection
   - Member Interfaces: LAN
   - Span Port: whatever interface you just created
 
+pfSense SPAN Interface Setup
+![pfSense SPAN Interface Setup](media/lab9-4.png)
+
+pfSense Bridge Setup
+![pfSense Bridge Setup](media/lab9-5.png)
 
 ### Part 4: Capture Packets with Kali
+
+Confirm Kali is connected to pfSense by pinging the pfSense SPAN LAN IP (192.168.2.1)
+![Kali Ping pfSense SPAN LAN IP](media/lab9-6.png)
 
 Now we will use Wireshark on Kali to sniff for network traffic on the `span` connection.
 
