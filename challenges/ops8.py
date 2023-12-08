@@ -1,3 +1,9 @@
+#!/usr/bin/env python3
+# Script:                       Op Challenge 8
+# Author:                       Andrew Carroll
+# Date of latest revision:      12/6/2023
+# Purpose:                      Python Collections
+
 # Define the list
 phrase_list = ["Embrace", "cosmic", "burritos", "of", "existence;", "dance", "with", "starlight", "in", "taco", "shells"]
 

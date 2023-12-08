@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+# Script:                       Op Challenge 7
+# Author:                       Andrew Carroll
+# Date of latest revision:      12/5/2023
+# Purpose:                      Directory Creation
 
 import os
 
