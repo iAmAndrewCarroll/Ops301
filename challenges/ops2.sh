@@ -2,7 +2,7 @@
 
 # Define source and destination directories
 src_dir="/var/log"
-dest_dir="~/backups"  # Using a relative path
+dest_dir="/backups"  # Using a relative path
 
 # Ensure the destination directory exists, create it if necessary
 mkdir -p "$dest_dir"
