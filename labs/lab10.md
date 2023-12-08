@@ -33,6 +33,9 @@ GlobeX is considering moving some of their infrastructure to the AWS cloud. You 
 
 Read through the entire lab and use Draw.io to create an appropriate topology of the network you expect to construct. Include as many details as you can such as computer names, OS types, IP addresses, etc. Include a screenshot of this initial topology.
 
+Topology
+![Topology](media/lab10-1.png)
+
   ### Part 2: Creating a VPC
 
 For this lab, you'll be creating a VPC on AWS. A VPC is a virtual network within the AWS Cloud. A VPC allows you to provision your own isolated section of AWS, very similar to designing and implementing a separate independent network in an on-premises data center.
@@ -282,6 +285,10 @@ Include a screenshot of your ping and SSH results in your submission.
 When the other tasks are complete, review the topology and update, revise, extend, or add details as necessary.
 
 Was your initial topology accurate to the finished product? Why or why not?
+- Yes.  The initial topology was correct.  We were just building a "nesting doll" of subnets and security groups.
+
+Topology
+![Topology](media/lab10-1.png)
 
 ## Stretch goals (Optional Objectives)
 
