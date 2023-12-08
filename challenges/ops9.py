@@ -1,3 +1,9 @@
+#!/usr/bin/env python3
+# Script:                       Op Challenge 9
+# Author:                       Andrew Carroll
+# Date of latest revision:      12/7/2023
+# Purpose:                      Python Conditionals
+
 # Assign values to variables a and b
 a = 10
 b = 5
