@@ -1,6 +1,18 @@
 # Define the list
 phrase_list = ["Embrace", "cosmic", "burritos", "of", "existence;", "dance", "with", "starlight", "in", "taco", "shells"]
 
+# Print the fourth element of the list
+print("Fourth element:", phrase_list[3])
+
+# Print the sixth through tenth elements of the list
+print("Sixth through tenth elements:", phrase_list[5:])
+
+# Change the value of the seventh element to "onion"
+phrase_list[6] = "onion"
+
+# Print the updated list
+print("Updated list:", phrase_list)
+
 # Using append() to add an element at the end
 phrase_list.append("universe")
 print("After append:", phrase_list)
