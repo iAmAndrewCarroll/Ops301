@@ -1,0 +1,10 @@
+Timestamp: 2023-12-11 13:21:41
+User Mode Time: 240005.65
+Kernel Mode Time: 114164.25
+Idle Time: 3664839.54
+Priority User Mode Time: 0.0
+I/O Wait Time: None
+Hardware Interrupt Time: None
+Software Interrupt Time: None
+Virtualized Time: None
+Virtual CPU Time: None
