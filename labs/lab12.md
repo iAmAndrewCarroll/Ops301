@@ -40,7 +40,7 @@ In order for AD and DC to function properly, we'll need to configure Windows Ser
   - Services > DHCP Server > LAN > Server Options > DNS Servers > 192.168.1.2 (WinServer IP) > Save > Apply Changes
 ![pfSense DNS Configuration](media/lab12.4.png)
 
-- Verify that all devices have working DNS through Windows Server and can browse the internet.
+Verify that all devices have working DNS through Windows Server and can browse the internet.
 
 `nslookup google.com` from Win10 Client
 ![Win10 Client nslookup google.com](media/lab12.1.png)
