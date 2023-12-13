@@ -98,7 +98,7 @@ Desktop for WinServer
 
 Update your network topology diagram with any changes made to your network.
 
-![Network Topology](media/lab11-5.png)
+![Network Topology](media/lab13.7.png)
 
 ## Stretch Goals (Optional Objectives)
 

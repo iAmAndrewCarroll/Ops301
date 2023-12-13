@@ -136,4 +136,4 @@ Windows Update
 - Include IP address, OS, and computer name of each host near its icon.
 
 Topology
-![Topology](media/lab11-5.png)
+![Topology](media/lab13.7.png)
