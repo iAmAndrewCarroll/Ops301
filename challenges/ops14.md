@@ -4,6 +4,7 @@ Insert comments into each line of the script explaining in your own words what t
 Insert comments above each function explaining what the purpose of this function is and what it hopes to carry out.
 Insert comments above the final three lines explaining how the functions are called and what this script appears to do.
 
+```python
 #!/usr/bin/python3 *This tells the computer to use python3 to run the script*
 import os *This imports the os module*
 import datetime *This imports the datetime module*
@@ -52,7 +53,7 @@ def detonate(): *This defines the function detonate*
 files_targeted = locate(os.path.abspath("")) *This sets the variable files_targeted to the list of files in the current directory*
 infect(files_targeted) *This calls the function infect with the list of files as the argument*
 detonate() *This calls the function detonate*
-
+```
 
 # Demo
 
