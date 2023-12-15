@@ -61,12 +61,17 @@ Pictures Properties
 
 ### Part 2: Policy Push & Testing
 
-- Verify the folder redirection policy is effective by saving a picture to your Pictures folder and verifying it appears on the share in Windows Server.
-  - Cannot get this to work.  Had Raphael and Zack helping me and couldn't get it figured out.  
+- Verify the folder redirection policy is effective by saving a picture to your Pictures folder and verifying it appears on the share in Windows Server. 
   - Remember how group policy is applied, and how you can force it to apply.
     - `gpupdate /force`
   - Some group policies only apply when the user logs in.
     - System restart and logged back in.
+
+Showing the successful connection for the completion of the lab.
+
+![Picture in Shared Folder](media/lab14.7.png)
+
+![Picture in Shared Folder](media/lab14.8.png)
 
 ## Submission Instructions
 
@@ -76,3 +81,7 @@ Pictures Properties
 1. Add your name & date at the top of the Google Doc.
 1. Share your Google Doc so that "Anyone with the link can view".
 1. Paste the link to your Google Doc in the discussion field below and share an observation from your experience in this lab.
+
+
+# New Steps
+File and Share > Shares > Tasks > New Share > SMB Share - Quick > Custom File Path > Share Name > Allow Caching > In Permissions Ensure the proper users are selected >  
